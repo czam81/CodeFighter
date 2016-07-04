@@ -1,12 +1,25 @@
-﻿using System;
+﻿using CodeFighter.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CodeFighter.Tests
-{
-    class CodeFighterPlayerTest
+{ 
+    [TestClass]
+    public class CodeFighterPlayerTest
     {
+        [TestMethod]
+        public void UsarEspecialCuandoLaEnergiaDelJugadorUnoEsIgualACienYLaVidaDelOponentemMayorATreinta()
+        {
+            var player1 = new CodeFighterPlayer("Juan","QA");
+            var player2 = new CodeFighterPlayer("Pepe", "Dev");
+            var game = new CodeFighterGame(player1,player2);
+            game.round.player1.special();
+
+
+        }
     }
 }
