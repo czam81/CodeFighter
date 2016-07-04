@@ -1,7 +1,12 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace CodeFighter.Features
@@ -10,33 +15,61 @@ namespace CodeFighter.Features
     public sealed class InicioSteps
     {
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
+        static IWebDriver driver;
 
-        [Given("I have entered (.*) into the calculator")]
-        public void GivenIHaveEnteredSomethingIntoTheCalculator(int number)
+        [BeforeFeature]
+        public static void BeforeFeature()
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see http://go.specflow.org/doc-sharingdata 
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            ScenarioContext.Current.Pending();
+            driver = new ChromeDriver(@"C:\Users\Itachi\Source\Repos\CodeFighter\CodeFighter\packages\WebDriver.ChromeDriver.26.14.313457.1\tools");
+            //driver = new FirefoxDriver();
         }
 
-        [When("I press add")]
-        public void WhenIPressAdd()
+        [AfterFeature]
+        public static void AfterFeature()
         {
-            //TODO: implement act (action) logic
-
-            ScenarioContext.Current.Pending();
+            driver.Quit();
         }
 
-        [Then("the result should be (.*) on the screen")]
-        public void ThenTheResultShouldBe(int result)
+        [Given(@"I enter the gamex")]
+        public void GivenIEnterTheGamex()
         {
-            //TODO: implement assert (verification) logic
-
-            ScenarioContext.Current.Pending();
+            driver.Url = "http://localhost:6961/Home/Index";
         }
+
+        [Given(@"Player(.*) name is set ""(.*)""")]
+        public void GivenPlayerNameIsSet(int p0, string p1)
+        {
+            driver.FindElement(By.Id("txtPlayer" + p0 + "Name")).SendKeys(p1);
+        }
+
+        [Given(@"Player(.*) role is set ""(.*)""")]
+        public void GivenPlayerRoleIsSet(int p0, string p1)
+        {
+            driver.FindElement(By.Id("txtPlayer" + p0 + "Role")).SendKeys(p1);
+        }
+
+        [Given(@"Start game")]
+        public void GivenStartGame()
+        {
+            driver.FindElement(By.Id("btnStartGame")).Click();
+        }
+
+        [Then(@"Life Player(.*) is ""(.*)""")]
+        public void ThenLifePlayerIs(int p0, int p1)
+        {
+            Thread.Sleep(200);
+            var currentLife = driver.FindElement(By.Id("lblPlayer" + p0 + "CurrentLife")).Text;
+            Assert.AreEqual("200", currentLife);
+        }
+
+        [Then(@"Energy Player(.*) is ""(.*)""")]
+        public void ThenEnergyPlayerIs(int p0, int p1)
+        {
+            Thread.Sleep(200);
+            var currentEnergy = driver.FindElement(By.Id("lblPlayer" + p0 + "CurrentEnergy")).Text;
+            Assert.AreEqual("0", currentEnergy);
+        }
+
+
     }
 }

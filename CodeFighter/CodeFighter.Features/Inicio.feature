@@ -4,7 +4,8 @@
 
 
 Scenario: Start Game
-	Given Player1 name is set "Maria" 
+	Given I enter the gamex
+		And Player1 name is set "Maria" 
 		And Player2 name is set "Juan"
 		And Player1 role is set "QA"
 		And Player2 role is set "PM"

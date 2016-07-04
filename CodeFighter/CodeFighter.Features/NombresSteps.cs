@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace CodeFighter.Features
         public static void BeforeFeature()
         {
             driver = new ChromeDriver(@"C:\Users\Itachi\Source\Repos\CodeFighter\CodeFighter\packages\WebDriver.ChromeDriver.26.14.313457.1\tools");
+            //driver = new FirefoxDriver();
         }
 
         [AfterFeature]
