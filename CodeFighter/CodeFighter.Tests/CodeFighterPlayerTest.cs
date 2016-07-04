@@ -17,9 +17,10 @@ namespace CodeFighter.Tests
             var player1 = new CodeFighterPlayer("Juan","QA");
             var player2 = new CodeFighterPlayer("Pepe", "Dev");
             var game = new CodeFighterGame(player1,player2);
+
             game.round.player1.special();
-
-
+           
+            Assert.AreEqual("170",game.round.player2.life);
         }
     }
 }
