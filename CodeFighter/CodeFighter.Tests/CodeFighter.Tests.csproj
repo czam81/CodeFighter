@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeFighter\CodeFighter.csproj">
-      <Project>{55E3B44B-C911-4D23-9747-D9DBE61568D1}</Project>
+      <Project>{55e3b44b-c911-4d23-9747-d9dbe61568d1}</Project>
       <Name>CodeFighter</Name>
     </ProjectReference>
   </ItemGroup>
