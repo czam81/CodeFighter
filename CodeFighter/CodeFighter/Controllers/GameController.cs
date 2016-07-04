@@ -6,15 +6,12 @@ using System.Web.Mvc;
 
 namespace CodeFighter.Controllers
 {
-    public class HomeController : Controller
+    public class GameController : Controller
     {
+        // GET: Game
         public ActionResult Index()
         {
             return View();
-        }
-
-        public void SendData()
-        {
         }
     }
 }

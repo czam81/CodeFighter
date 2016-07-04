@@ -4,8 +4,10 @@
 
 
 Scenario: Start Game
-	Given Player1 is "Maria" 
-		And Player2 is "Juan"
+	Given Player1 name is set "Maria" 
+		And Player2 name is set "Juan"
+		And Player1 role is set "QA"
+		And Player2 role is set "PM"
 		And Start game
 	Then Life Player1 is "200" 
 		And Life Player2 is "200" 
