@@ -13,5 +13,19 @@ namespace CodeFighter.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult ExecSpecialPlayer1()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ExecSpecialPlayer2()
+        {
+            return View();
+        }
     }
+
+   
 }

@@ -58,6 +58,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Especial.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Especial.feature</DependentUpon>
+    </Compile>
     <Compile Include="InicioSteps.cs" />
     <Compile Include="Inicio.feature.cs">
       <AutoGen>True</AutoGen>
@@ -65,9 +70,14 @@
       <DependentUpon>Inicio.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EspecialSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Especial.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Especial.feature.cs</LastGenOutput>
+    </None>
     <None Include="Inicio.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Inicio.feature.cs</LastGenOutput>
