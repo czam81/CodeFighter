@@ -70,7 +70,7 @@ namespace CodeFighter.Models
             }
         }
 
-        private void heal()
+        public void heal()
         {
             if (energy == maxEnergy)
             {
