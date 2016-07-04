@@ -19,8 +19,8 @@ namespace CodeFighter.Features
         [BeforeFeature]
         public static void BeforeFeature()
         {
-            driver = new ChromeDriver(@"C:\Users\Itachi\Source\Repos\CodeFighter\CodeFighter\packages\WebDriver.ChromeDriver.26.14.313457.1\tools");
-            //driver = new FirefoxDriver();
+            //driver = new ChromeDriver(@"C:\Users\Itachi\Source\Repos\CodeFighter\CodeFighter\packages\WebDriver.ChromeDriver.26.14.313457.1\tools");
+            driver = new FirefoxDriver();
         }
 
         [AfterFeature]
