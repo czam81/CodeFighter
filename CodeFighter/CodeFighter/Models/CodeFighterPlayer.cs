@@ -63,11 +63,15 @@ namespace CodeFighter.Models
         }
         public void special()
         {
-            if (energy == maxEnergy)
+            if (IsValidSpecial())
             {
                 loseEnergy(maxEnergy);
                 receiveEnergy(30);
             }
+        }
+
+        public bool IsValidSpecial() {
+            return energy == maxEnergy;
         }
 
         public void heal()

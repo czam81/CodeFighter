@@ -87,16 +87,36 @@ namespace CodeFighter.Controllers
         }
 
         [HttpPost]
-        public ActionResult ExecSpecialPlayer1()
+        public JsonResult ExecSpecialPlayer1()
         {
-            return View();
+            CodeFighterGame game = (CodeFighterGame)Session["Game"];
+            var SpecialIsValid = game.player1.IsValidSpecial();
+            game.player1.special();
+            Session["Game"] = game;
+            return Json(new
+            {
+                SpecialIsValid = SpecialIsValid,
+                Player1CurrentEnergy = game.player1.energy,
+                Player2CurrentLife = game.player2.life
+            });
         }
 
         [HttpPost]
-        public ActionResult ExecSpecialPlayer2()
+        public JsonResult ExecSpecialPlayer2()
         {
-            return View();
+            CodeFighterGame game = (CodeFighterGame)Session["Game"];
+            var SpecialIsValid = game.player2.IsValidSpecial();
+            game.player2.special();
+            Session["Game"] = game;
+            return Json(new
+            {
+                SpecialIsValid = SpecialIsValid,
+                Player2CurrentEnergy = game.player2.energy,
+                Player1CurrentLife = game.player1.life
+            });
         }
+
+
     }
 
    

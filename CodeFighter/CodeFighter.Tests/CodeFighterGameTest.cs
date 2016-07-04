@@ -18,7 +18,7 @@ namespace CodeFighter.Tests
         public void Setup()
         {
             player1 = new CodeFighterPlayer("Juan", "QA");
-            player2 = new CodeFighterPlayer("Pepe", "Dev");
+            player2 = new CodeFighterPlayer("Pepe", "DEV");
         }
 
         [TestMethod]
@@ -44,7 +44,7 @@ namespace CodeFighter.Tests
         }
 
         [TestMethod]
-        public void UseSpecialWhenPlayer2Kick7Times()
+        public void UseSpecialWhenPlayer2Kick7TimesAndPlayerOneReceive1Kick()
         {
             var game = new CodeFighterGame(player1, player2);
 
@@ -62,16 +62,29 @@ namespace CodeFighter.Tests
         }
 
         [TestMethod]
+        public void UseSpecialWhenPlayer1Begin()
+        {
+            player1.energy = 0;
+            var game = new CodeFighterGame(player1, player2);
+
+            game.round.player1.special();
+
+            Assert.AreEqual(0, game.round.player1.energy);
+        }
+
+        [TestMethod]
         public void UseSpecialWhenPlayer1EnergyLess100()
         {
             player1.energy = 0;
             var game = new CodeFighterGame(player1, player2);
 
-            game.round.player1.energy = 50;
+            game.round.player1.kick();
+            game.round.player2.receiveKick();
             game.round.player1.special();
 
-            Assert.AreEqual(50, game.round.player1.energy);
+            Assert.AreEqual(16, game.round.player1.energy);
         }
+
 
     }
 }

@@ -83,5 +83,36 @@
                 }
             });
         });
+
+        $("#btnPlayer1Special").on("click", function () {
+            $.ajax({
+                type: "POST",
+                url: "@(Url.Action("ExecSpecialPlayer1"))",
+                success: function (e) {
+                    if (e.SpecialIsValid) {
+                        $("#lblPlayer2CurrentLife").text(e.Player2CurrentLife);
+                        $("#lblPlayer1CurrentEnergy").text(e.Player1CurrentEnergy);
+                    } else
+                        alert("Can not exec special");
+                }
+            });
+        });
+        
+        $("#btnPlayer2Special").on("click", function () {
+            $.ajax({
+                type: "POST",
+                url: "@(Url.Action("ExecSpecialPlayer2"))",
+                success: function (e) {
+                    if (e.SpecialIsValid) {
+                        $("#lblPlayer1CurrentLife").text(e.Player1CurrentLife);
+                        $("#lblPlayer2CurrentEnergy").text(e.Player2CurrentEnergy);
+                    }else
+                        alert("Can not exec special");                    
+                }
+            });
+        });
+
+
+
     });
 </script>
