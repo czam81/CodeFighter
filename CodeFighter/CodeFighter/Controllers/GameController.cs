@@ -25,7 +25,65 @@ namespace CodeFighter.Controllers
             ViewBag.Player2CurrentEnergy = player2.energy;
             ViewBag.MaxLife = game.maxLifes;
             ViewBag.MaxEnergy = game.maxEnergy;
+
+            Session["Game"] = game;
             return View();
+        }
+
+        [HttpPost]
+        public JsonResult Player1Punch()
+        {
+            CodeFighterGame game = (CodeFighterGame)Session["Game"];
+            game.player1.punch();
+            game.player2.receivePunch();
+            Session["Game"] = game;
+            return Json(new
+            {
+                Player1CurrentEnergy = game.player1.energy,
+                Player2CurrentLife = game.player2.life
+            });
+        }
+
+        [HttpPost]
+        public JsonResult Player2Punch()
+        {
+            CodeFighterGame game = (CodeFighterGame)Session["Game"];
+            game.player2.punch();
+            game.player1.receivePunch();
+            Session["Game"] = game;
+            return Json(new
+            {
+                Player2CurrentEnergy = game.player2.energy,
+                Player1CurrentLife = game.player1.life
+            });
+        }
+
+        [HttpPost]
+        public JsonResult Player1Kick()
+        {
+            CodeFighterGame game = (CodeFighterGame)Session["Game"];
+            game.player1.kick();
+            game.player2.receiveKick();
+            Session["Game"] = game;
+            return Json(new
+            {
+                Player1CurrentEnergy = game.player1.energy,
+                Player2CurrentLife = game.player2.life
+            });
+        }
+
+        [HttpPost]
+        public JsonResult Player2Kick()
+        {
+            CodeFighterGame game = (CodeFighterGame)Session["Game"];
+            game.player2.kick();
+            game.player1.receiveKick();
+            Session["Game"] = game;
+            return Json(new
+            {
+                Player2CurrentEnergy = game.player2.energy,
+                Player1CurrentLife = game.player1.life
+            });
         }
 
         [HttpPost]

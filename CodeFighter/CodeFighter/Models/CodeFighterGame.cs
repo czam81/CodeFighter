@@ -18,8 +18,8 @@ namespace CodeFighter.Models
             round = new CodeFighterRound(player1,player2);
         }
 
-        CodeFighterPlayer player1;
-        CodeFighterPlayer player2;
+        public CodeFighterPlayer player1;
+        public CodeFighterPlayer player2;
         List<CodeFighterRound> rounds;
         int roundNumber;
         public int maxLifes = 200;
