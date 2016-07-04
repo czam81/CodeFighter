@@ -19,7 +19,9 @@ namespace CodeFighter.Models
         public CodeFighterRound(CodeFighterPlayer player1, CodeFighterPlayer player2)
         {
             this.player1 = player1;
-            this.player2 = player2;  
+            this.player2 = player2;
+            this.player1.resetLifeForRound();
+            this.player2.resetLifeForRound();
         }
 
         public string getRoundStatus() {
