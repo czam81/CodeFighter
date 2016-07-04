@@ -24,7 +24,7 @@ namespace CodeFighter.Models
             get; set;
         }
         private int maxLife;
-        private int maxEnergy;
+        private int maxEnergy = 100;
         private int healDamage = 50;
         public CodeFighterPlayer(string _name, string _role)
         {
