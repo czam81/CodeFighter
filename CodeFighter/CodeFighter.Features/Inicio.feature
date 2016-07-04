@@ -1,11 +1,13 @@
-﻿Feature: Inicio
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+﻿Feature: Start
+	Al Ingresar 2 Jugadores en pantalla
+	200 de vida para cada jugadores
 
-@mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+
+Scenario: Start Game
+	Given Player1 is "Maria" 
+		And Player2 is "Juan"
+		And Start game
+	Then Life Player1 is "200" 
+		And Life Player2 is "200" 
+		And Energy Player1 is "0" 
+		And Energy Player2 is "0" 
