@@ -50,15 +50,15 @@ namespace CodeFighter.Features
         [Then(@"PlayerUno name is get ""(.*)""")]
         public void ThenPlayerUnoNameIsGet(string p0)
         {
-            var nombreUno = driver.FindElement(By.Id("txtPlayer1Name")).Text;
-            Assert.AreEqual("Maria", nombreUno);
+            var nombreUno = driver.FindElement(By.Id("txtPlayer1Name")).GetAttribute("value");
+            Assert.AreEqual(p0, nombreUno);
         }
 
         [Then(@"PlayerDos name is get ""(.*)""")]
         public void ThenPlayerDosNameIsGet(string p0)
         {
-            var nombreDos = driver.FindElement(By.Id("txtPlayer2Name")).Text;
-            Assert.AreEqual("Juan", nombreDos);
+            var nombreDos = driver.FindElement(By.Id("txtPlayer2Name")).GetAttribute("value");
+            Assert.AreEqual(p0, nombreDos);
         }
 
     }
