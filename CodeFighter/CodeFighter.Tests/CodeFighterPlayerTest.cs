@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodeFighter.Tests
 {
-    class CodeFighterTest
+    class CodeFighterPlayerTest
     {
     }
 }

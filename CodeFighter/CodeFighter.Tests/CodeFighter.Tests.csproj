@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeFighterTest.cs" />
+    <Compile Include="CodeFighterPlayerTest.cs" />
+    <Compile Include="CodeFighterRoundTest.cs" />
+    <Compile Include="CodeFighterGameTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
