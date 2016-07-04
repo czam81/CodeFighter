@@ -12,7 +12,7 @@ namespace CodeFighter.Models
         public CodeFighterGame(CodeFighterPlayer player1, CodeFighterPlayer player2)
         {
             rounds = new List<CodeFighterRound>();
-            this.player1 = player1;
+            this.player1 = player1;            
             this.player2 = player2;
             roundNumber = 1;
             round = new CodeFighterRound(player1,player2);
@@ -22,8 +22,8 @@ namespace CodeFighter.Models
         CodeFighterPlayer player2;
         List<CodeFighterRound> rounds;
         int roundNumber;
-        int maxLifes = 200;
-        int maxEnergy = 100;
+        public int maxLifes = 200;
+        public int maxEnergy = 100;
 
         public string geGameWinner()
         {

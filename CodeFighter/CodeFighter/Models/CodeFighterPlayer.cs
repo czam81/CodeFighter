@@ -55,18 +55,18 @@ namespace CodeFighter.Models
 
         public void punch()
         {
-            receiveEnergy(5);
+            receiveEnergy(10);
         }
         public void kick()
         {
-            receiveEnergy(8);
+            receiveEnergy(16);
         }
         public void special()
         {
             if (energy == maxEnergy)
             {
                 loseEnergy(maxEnergy);
-                receiveEnergy(15);
+                receiveEnergy(30);
             }
         }
 

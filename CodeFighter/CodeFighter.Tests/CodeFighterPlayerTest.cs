@@ -116,7 +116,7 @@ namespace CodeFighter.Tests
             player.resetLifeForRound();
             player.punch();
             var energy = player.energy;
-            Assert.AreEqual(5, energy);
+            Assert.AreEqual(10, energy);
         }
         [TestMethod]
         public void playerKicks()
@@ -124,7 +124,7 @@ namespace CodeFighter.Tests
             player.resetLifeForRound();
             player.kick();
             var energy = player.energy;
-            Assert.AreEqual(8, energy);
+            Assert.AreEqual(16, energy);
         }
         [TestMethod]
         public void playerDoSpecialWithoutEnoughEnergy()
@@ -143,7 +143,7 @@ namespace CodeFighter.Tests
             player.energy = 100;
             player.special();
             var energy = player.energy;
-            Assert.AreEqual(15, energy);
+            Assert.AreEqual(30, energy);
         }
 
         [TestMethod]

@@ -5,11 +5,35 @@
     <title>Index</title>
 </head>
 <body>    
-    <form action="ExecSpecialPlayer1" method="post">
-        <input id="especialAction" type="submit" value="Especial" />
-    </form>
-    <form action="ExecSpecialPlayer2" method="post">
-        <input id="especialAction" type="submit" value="Especial" />
-    </form>
+    <div class="col-sm-6">
+        <div class="row">@ViewBag.Player1Name</div>
+        <div class="row">
+            Life: <span>@ViewBag.Player1CurrentLife</span>/<span>@ViewBag.MaxLife</span>
+        </div>
+        <div class="row">
+            Energy: <span>@ViewBag.Player1CurrentEnergy</span>/<span>@ViewBag.MaxEnergy</span>
+        </div>
+        <div class="row">
+            <input type="button" id="btnPlayer1Punch" value="Punch"/>
+            <input type="button" id="btnPlayer1Kick" value="Kick" />
+            <input type="button" id="btnPlayer1Special" value="Special" />
+            <input type="button" id="btnPlayer1Heal" value="Heal" />
+        </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="row">@ViewBag.Player2Name</div>
+    <div class="row">
+        Life: <span>@ViewBag.Player2CurrentLife</span>/<span>@ViewBag.MaxLife</span>
+    </div>
+    <div class="row">
+        Energy: <span>@ViewBag.Player2CurrentEnergy</span>/<span>@ViewBag.MaxEnergy</span>
+    </div>
+    <div class="row">
+        <input type="button" id="btnPlayer2Punch" value="Punch" />
+        <input type="button" id="btnPlayer2Kick" value="Kick" />
+        <input type="button" id="btnPlayer2Special" value="Special" />
+        <input type="button" id="btnPlayer2Heal" value="Heal" />
+    </div>
+</div>
 </body>
 </html>

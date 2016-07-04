@@ -71,6 +71,13 @@
     </Compile>
     <Compile Include="NombresSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EspecialSteps.cs" />
+    <Compile Include="Punch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Punch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="PunchSteps.cs" />
     <Compile Include="US10.Rondas.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +105,10 @@
       <LastGenOutput>Inicio.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Punch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Punch.feature.cs</LastGenOutput>
+    </None>
     <None Include="US10.Rondas.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>US10.Rondas.feature.cs</LastGenOutput>
