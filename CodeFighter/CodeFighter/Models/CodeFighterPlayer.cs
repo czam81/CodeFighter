@@ -32,12 +32,12 @@ namespace CodeFighter.Models
             role = _role;
         }
 
-        public void resetLifeForRound(int? _maxLife, int? _maxEnergy)
+        public void resetLifeForRound(int _maxLife = 200, int _maxEnergy = 100)
         {
-            life = _maxLife.HasValue ? _maxLife.Value : 200;
+            life = _maxLife;
             energy = 0;
-            maxLife = _maxLife.HasValue ? _maxLife.Value : 100;
-            maxEnergy = _maxEnergy.HasValue ? _maxEnergy.Value : 100;
+            maxLife = _maxLife;
+            maxEnergy = _maxEnergy;
         }
 
         public void receivePunch()
@@ -70,7 +70,7 @@ namespace CodeFighter.Models
             }
         }
 
-        private void heal()
+        public void heal()
         {
             if (energy == maxEnergy)
             {
@@ -78,6 +78,7 @@ namespace CodeFighter.Models
                 loseEnergy(maxEnergy);
             }
         }
+
         private void receiveDamage(int damage)
         {
             life = life - damage <= 0 ? 0 : life - damage;
