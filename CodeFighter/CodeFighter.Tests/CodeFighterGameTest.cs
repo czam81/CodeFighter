@@ -22,7 +22,7 @@ namespace CodeFighter.Tests
         }
 
         [TestMethod]        
-        public void UseSpecialWhenPlayerEnergyEquals100()
+        public void UseSpecialWhenPlayer1EnergyEquals100()
         {
             player1.energy = 0;         
             var game = new CodeFighterGame(player1, player2);
@@ -31,6 +31,71 @@ namespace CodeFighter.Tests
             game.round.player1.special();
 
             Assert.AreEqual(15, game.round.player1.energy);
+        }
+
+        [TestMethod]
+        public void UseSpecialWhenPlayer1EnergyLess100()
+        {
+            player1.energy = 0;
+            var game = new CodeFighterGame(player1, player2);
+
+            game.round.player1.energy = 50;
+            game.round.player1.special();
+
+            Assert.AreEqual(50, game.round.player1.energy);
+        }
+
+        [TestMethod]
+        public void UseSpecialWhenPlayer2EnergyEquals100()
+        {
+            player2.energy = 0;
+            var game = new CodeFighterGame(player1, player2);
+
+            game.round.player2.kick();
+            game.round.player1.receiveKick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player1.receiveKick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player1.special();
+
+            Assert.AreEqual(15, game.round.player2.energy);
+        }
+
+        [TestMethod]
+        public void UseSpecialWhenPlayer2EnergyEquals10011()
+        {
+            player2.energy = 0;
+            var game = new CodeFighterGame(player1, player2);
+
+            game.round.player2.kick();
+            game.round.player1.receiveKick(); 
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.kick();
+            game.round.player2.special();
+
+            Assert.AreEqual(15, game.round.player2.energy);
         }
     }
 }
