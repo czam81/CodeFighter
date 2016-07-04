@@ -18,19 +18,19 @@ namespace CodeFighter.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class StartFeature
+    public partial class US9NombresFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Inicio.feature"
+#line 1 "US9.Nombres.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Start", "\tAl Ingresar 2 Jugadores en pantalla\r\n\t200 de vida para cada jugadores", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "US9 Nombres", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -45,9 +45,9 @@ namespace CodeFighter.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Start")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "US9 Nombres")))
             {
-                CodeFighter.Features.StartFeature.FeatureSetup(null);
+                CodeFighter.Features.US9NombresFeature.FeatureSetup(null);
             }
         }
         
@@ -68,31 +68,23 @@ namespace CodeFighter.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Start Game")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Start")]
-        public virtual void StartGame()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Ingresar nombre de jugadores")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "US9 Nombres")]
+        public virtual void IngresarNombreDeJugadores()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Start Game", ((string[])(null)));
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Ingresar nombre de jugadores", ((string[])(null)));
+#line 3
 this.ScenarioSetup(scenarioInfo);
+#line 4
+ testRunner.Given("I enter the game", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 5
+ testRunner.And("PlayerUno name is set \"Maria\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 6
+ testRunner.And("PlayerDos name is set \"Juan\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
- testRunner.Given("Player1 name is set \"Maria\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Then("PlayerUno name is get \"Maria\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 8
-  testRunner.And("Player2 name is set \"Juan\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
-  testRunner.And("Player1 role is set \"QA\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
-  testRunner.And("Player2 role is set \"PM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
-  testRunner.And("Start game", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
- testRunner.Then("Life Player1 is \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 13
-  testRunner.And("Life Player2 is \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
-  testRunner.And("Energy Player1 is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
-  testRunner.And("Energy Player2 is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("PlayerDos name is get \"Juan\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
