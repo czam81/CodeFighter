@@ -78,6 +78,7 @@ namespace CodeFighter.Models
                 loseEnergy(maxEnergy);
             }
         }
+
         private void receiveDamage(int damage)
         {
             life = life - damage <= 0 ? 0 : life - damage;
